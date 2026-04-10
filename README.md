@@ -12,6 +12,7 @@ class RNNModel(nn.Module):
         out = self.fc(out[:, -1, :])  #   Take the output of the last time step
         return out
 
+model = RNNModel()
 criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 
